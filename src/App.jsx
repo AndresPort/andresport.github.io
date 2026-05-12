@@ -23,6 +23,32 @@ function App() {
       "https://www.linkedin.com/in/andr%C3%A9s-felipe-portillo-olivar-9168762a2/",
   };
 
+  const spanishText= {
+    portfolioLogo:"Portafolio",
+    aboutMe: "Sobre Mi",
+    skills: "Habilidades",
+    projects: "Projectos",
+    contact: "Contacto",
+    greetings: "Hola, soy",
+    name: "Andrés Felipe Portillo",
+    appointment: "Desarrollador de Software",
+    definition: "Full Stack",
+    downloadCv: "Descargar CV"
+  }
+
+  const englishText={
+    portfolioLogo:"Portfolio",
+    aboutMe: "About Me",
+    skills: "Skills",
+    projects: "Projects",
+    contact: "Contact",
+    greetings: "Hi, I'm",
+    name: "Andres Felipe Portillo",
+    appointment: "FullStack",
+    definition: "Software Developer",
+    downloadCv: "Download CV"
+  }
+
   const handleClickDownloadCv = async () => {
     const cv = document.createElement("a");
     cv.href = andresPortilloCv;
@@ -36,13 +62,13 @@ function App() {
     <>
       <header className="header">
         <div className="logoContainer">
-          <span className="portfolioLogo">Portafolio</span>
+          <span className="portfolioLogo">{inSpanish ? spanishText.portfolioLogo : englishText.portfolioLogo}</span>
         </div>
         <div className="tittlesContainer">
-          <span className="aboutMe">Sobre Mi</span>
-          <span className="skills">Habilidades</span>
-          <span className="projects">Proyectos</span>
-          <span className="contact">Contacto</span>
+          <span className="aboutMe">{inSpanish ? spanishText.aboutMe : englishText.aboutMe}</span>
+          <span className="skills">{inSpanish ? spanishText.skills : englishText.skills}</span>
+          <span className="projects">{inSpanish ? spanishText.projects : englishText.projects}</span>
+          <span className="contact">{inSpanish ? spanishText.contact : englishText.contact}</span>
         </div>
         <div className="personalizationButtonsContainer">
           <button
@@ -69,10 +95,10 @@ function App() {
         <div className="infoFrame">
           <img src={andres} alt="andres" className="andres" />
           <div className="descriptionContainer">
-            <span className="greetingsText">Hola, soy</span>
-            <span className="nameText">Andrés Felipe Portillo</span>
+            <span className="greetingsText">{inSpanish ? spanishText.greetings : englishText.greetings}</span>
+            <span className="nameText">{inSpanish ? spanishText.name : englishText.name}</span>
             <span className="appointmentText">
-              Desarrollador de software <br /> Full Stack
+              {inSpanish ? spanishText.appointment : englishText.appointment} <br /> {inSpanish ? spanishText.definition : englishText.definition}
             </span>
           </div>
         </div>
@@ -108,7 +134,7 @@ function App() {
               alt="userLightIcon"
               className="userLightIcon"
             />{" "}
-            Descargar CV
+            {inSpanish ? spanishText.downloadCv : englishText.downloadCv}
           </button>
         </div>
       </section>
