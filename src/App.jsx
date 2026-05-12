@@ -1,20 +1,11 @@
 import "./App.css";
-
 import { useState } from "react";
-
-import sunIcon from "./assets/images/sun-icon.svg";
-import moonIcon from "./assets/images/moon-icon.svg";
-import githubLightIcon from "./assets/images/github-light-icon.svg";
-import githubDarkIcon from "./assets/images/github-dark-icon.svg"
-import linkedinLightIcon from "./assets/images/linkedin-light-icon.svg";
-import linkedinDarkIcon from "./assets/images/linkedin-dark-icon.svg"
-import userLightIcon from "./assets/images/user-light-icon.png";
-import userDarkIcon from "./assets/images/user-dark-icon.png"
-import andres from "./assets/images/andres.png";
-import andresPortilloCv from "./assets/documents/Andres-Felipe-Portillo-Cv-Full-Stack.pdf";
+import Header from "./components/header/Header.jsx";
+import MainSection from "./components/mainSection/MainSection.jsx";
+import AboutMeSection from "./components/aboutMeSection/AboutMeSection.jsx";
 
 function App() {
-  const [inLighTheme, setInLightTheme] = useState(true);
+  const [inLightTheme, setInLightTheme] = useState(true);
   const [inSpanish, setInSpanish] = useState(true);
 
   const links = {
@@ -23,8 +14,8 @@ function App() {
       "https://www.linkedin.com/in/andr%C3%A9s-felipe-portillo-olivar-9168762a2/",
   };
 
-  const spanishText= {
-    portfolioLogo:"Portafolio",
+  const spanishText = {
+    portfolioLogo: "Portafolio",
     aboutMe: "Sobre Mi",
     skills: "Habilidades",
     projects: "Projectos",
@@ -33,11 +24,19 @@ function App() {
     name: "Andrés Felipe Portillo",
     appointment: "Desarrollador de Software",
     definition: "Full Stack",
-    downloadCv: "Descargar CV"
-  }
+    downloadCv: "Descargar CV",
+    backendProfile:
+      "Soy un desarrollador Full Stack de Cali, Colombia, enfocado en la creación de APIs REST robustas utilizando Node.js y Express como stack principal y Java con SpringBoot como stack secundario. Cuento con experiencia práctica implementando tecnologías modernas como JWT (JSON Web Token) y Cookies para la autenticación de usuarios y la protección de datos.",
+    dbProfile:
+      "Mi perfil también incluye manejo de persistencia de datos mediante Hibernate y JPA, así como experiencia trabajando con bases de datos SQL y NoSQL. Además, utilizo herramientas esenciales como Git y GitHub para el control de versiones y el trabajo colaborativo. Poseo un nivel de inglés B1 que me permite integrarme de manera efectiva en equipos internacionales.",
+    frontendProfile:
+      "En el área frontend, me especializo en el desarrollo de interfaces modernas, atractivas y escalables utilizando JavaScript y React como stack principal. Tengo experiencia construyendo aplicaciones dinámicas con un enfoque en rendimiento, experiencia de usuario y consumo eficiente de APIs REST. Además, aplico buenas prácticas de desarrollo para crear interfaces reutilizables, mantenibles y adaptables a distintos dispositivos, priorizando siempre la optimización y la fluidez de la aplicación.",
+    formationInformation:
+      "Actualmente curso el último semestre de la Tecnología en Desarrollo de Software y continúo fortaleciendo mis conocimientos de forma autodidacta mediante aprendizaje y práctica constante.",
+  };
 
-  const englishText={
-    portfolioLogo:"Portfolio",
+  const englishText = {
+    portfolioLogo: "Portfolio",
     aboutMe: "About Me",
     skills: "Skills",
     projects: "Projects",
@@ -46,100 +45,47 @@ function App() {
     name: "Andres Felipe Portillo",
     appointment: "FullStack",
     definition: "Software Developer",
-    downloadCv: "Download CV"
-  }
-
-  const handleClickDownloadCv = async () => {
-    const cv = document.createElement("a");
-    cv.href = andresPortilloCv;
-    cv.download = "Andres-Felipe-Portillo-Cv-Full-Stack";
-    document.body.appendChild(cv);
-    cv.click();
-    document.body.removeChild(cv);
+    downloadCv: "Download CV",
+    backendProfile:
+      "I am a Full Stack Developer from Cali focused on building robust REST APIs using Node.js and Express.js as my primary stack, and Java with Spring Boot as my secondary stack. I have hands-on experience implementing modern technologies such as JWT (JSON Web Token) and Cookies for user authentication and data protection.",
+    dbProfile:
+      "My profile also includes experience with data persistence using Hibernate ORM and Jakarta Persistence API, as well as working with both SQL and NoSQL databases. In addition, I use essential tools such as Git and GitHub for version control and collaborative development. I also have a B1 level of English, which allows me to integrate effectively into international teams.",
+    frontendProfile:
+      "On the frontend side, I specialize in developing modern, attractive, and scalable interfaces using JavaScript and React as my primary stack. I have experience building dynamic applications with a strong focus on performance, user experience, and efficient REST API consumption. Additionally, I apply development best practices to create reusable, maintainable, and responsive interfaces, always prioritizing optimization and application fluidity.",
+    formationInformation:
+      "I am currently in the final semester of my Software Development Technology degree and continue strengthening my skills through self-directed learning and constant practice.",
   };
 
   return (
     <>
-      <header className="header">
-        <div className="logoContainer">
-          <span className="portfolioLogo">{inSpanish ? spanishText.portfolioLogo : englishText.portfolioLogo}</span>
-        </div>
-        <div className="tittlesContainer">
-          <span className="aboutMe">{inSpanish ? spanishText.aboutMe : englishText.aboutMe}</span>
-          <span className="skills">{inSpanish ? spanishText.skills : englishText.skills}</span>
-          <span className="projects">{inSpanish ? spanishText.projects : englishText.projects}</span>
-          <span className="contact">{inSpanish ? spanishText.contact : englishText.contact}</span>
-        </div>
-        <div className="personalizationButtonsContainer">
-          <button
-            className="themeButton"
-            onClick={() => setInLightTheme(!inLighTheme)}
-          >
-            <img
-              src={inLighTheme ? sunIcon : moonIcon}
-              alt="sunIcon"
-              className="sunIcon"
-            />
-          </button>
-          <button
-            className="languageButton"
-            onClick={() => setInSpanish(!inSpanish)}
-          >
-            {" "}
-            {inSpanish ? "ES" : "EN"}
-          </button>
-        </div>
-      </header>
+          {/*  Header  */}
+      <Header
+        inSpanish={inSpanish}
+        setInSpanish={setInSpanish}
+        inLightTheme={inLightTheme}
+        setInLightTheme={setInLightTheme}
+        spanishText={spanishText}
+        englishText={englishText}
+      />
       {/*  Main Section  */}
-      <section className="mainSection">
-        <div className="infoFrame">
-          <img src={andres} alt="andres" className="andres" />
-          <div className="descriptionContainer">
-            <span className="greetingsText">{inSpanish ? spanishText.greetings : englishText.greetings}</span>
-            <span className="nameText">{inSpanish ? spanishText.name : englishText.name}</span>
-            <span className="appointmentText">
-              {inSpanish ? spanishText.appointment : englishText.appointment} <br /> {inSpanish ? spanishText.definition : englishText.definition}
-            </span>
-          </div>
-        </div>
-        <div className="contactButtons">
-          <button
-            className="githubButton"
-            onClick={() => window.open(links.github)}
-          >
-            <img
-              src={inLighTheme ? githubLightIcon: githubDarkIcon}
-              alt="githubLightIcon"
-              className="githubLightIcon"
-            />{" "}
-            Github
-          </button>
-          <button
-            className="linkedinButton"
-            onClick={() => window.open(links.linkedin)}
-          >
-            <img
-              src={inLighTheme ? linkedinLightIcon: linkedinDarkIcon}
-              alt="linkedinLightIcon"
-              className="linkedinLightIcon"
-            />{" "}
-            Linkedin
-          </button>
-          <button
-            className="downloadCvButton"
-            onClick={() => handleClickDownloadCv()}
-          >
-            <img
-              src={inLighTheme ?userLightIcon: userDarkIcon}
-              alt="userLightIcon"
-              className="userLightIcon"
-            />{" "}
-            {inSpanish ? spanishText.downloadCv : englishText.downloadCv}
-          </button>
-        </div>
-      </section>
+      <MainSection
+        inSpanish={inSpanish}
+        inLightTheme={inLightTheme}
+        spanishText={spanishText}
+        englishText={englishText}
+        links={links}
+      />
       {/*  About Me Section  */}
-      <section className="aboutMeSection"></section>
+      <AboutMeSection
+        inSpanish={inSpanish}
+        inLightTheme={inLightTheme}
+        spanishText={spanishText}
+        englishText={englishText}
+      />
+      {/*  Projects Section  */}
+      
+
+      {/*  Contact Section  */}
     </>
   );
 }

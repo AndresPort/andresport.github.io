@@ -1,0 +1,81 @@
+/*Seccion del header*/
+
+.header {
+  position: sticky;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  justify-self: center;
+  top: 5%;
+  background-color: none;
+
+}
+
+.logoContainer {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.portfolioLogo {
+  font-family: "Bernie", sans-serif;
+  font-size: 25px;
+}
+
+.tittlesContainer {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  padding: 5px 30px;
+  border-radius: 50px;
+  margin-left: -6vw;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
+  margin-left: 1vw;
+}
+
+.tittlesContainer span {
+  z-index: 10;
+  font-size: 14x;
+}
+
+.personalizationButtonsContainer {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  gap: 1vw;
+}
+
+.aboutMe,
+.skills,
+.projects,
+.contact {
+  cursor: pointer;
+}
+
+.themeButton,
+.languageButton {
+  width: 25px;
+  height: 25px;
+  border-style: none;
+  border-radius: 40px;
+  background: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.portfolioLogo:hover,
+.themeButton:hover,
+.languageButton:hover {
+  cursor: pointer;
+}
+
+.languageButton {
+  margin-top: 2px;
+}
+
+.sunIcon {
+  width: 25px;
+  height: 25px;
+}
