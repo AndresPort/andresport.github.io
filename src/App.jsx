@@ -3,6 +3,9 @@ import { useState } from "react";
 import Header from "./components/header/Header.jsx";
 import MainSection from "./components/mainSection/MainSection.jsx";
 import AboutMeSection from "./components/aboutMeSection/AboutMeSection.jsx";
+import SkillsSection from "./components/skillsSection/SkillsSection.jsx";
+//import ProjectsSection from "./components/projectsSection/ProjectsSection.jsx";
+
 
 function App() {
   const [inLightTheme, setInLightTheme] = useState(true);
@@ -33,7 +36,15 @@ function App() {
       "En el área frontend, me especializo en el desarrollo de interfaces modernas, atractivas y escalables utilizando JavaScript y React como stack principal. Tengo experiencia construyendo aplicaciones dinámicas con un enfoque en rendimiento, experiencia de usuario y consumo eficiente de APIs REST. Además, aplico buenas prácticas de desarrollo para crear interfaces reutilizables, mantenibles y adaptables a distintos dispositivos, priorizando siempre la optimización y la fluidez de la aplicación.",
     formationInformation:
       "Actualmente curso el último semestre de la Tecnología en Desarrollo de Software y continúo fortaleciendo mis conocimientos de forma autodidacta mediante aprendizaje y práctica constante.",
-  };
+    language: "Idiomas",
+    spanish: "Español",
+    english: "Inglés",
+    languageLevel: "nativo",
+    softSkills: "Habilidades blandas",
+    teamWork: "Trabajo en equipo",
+    flexibility: "adaptabilidad",
+    toolsAndTechnologies: "Tecnologías y herramientas",
+    };
 
   const englishText = {
     portfolioLogo: "Portfolio",
@@ -54,7 +65,15 @@ function App() {
       "On the frontend side, I specialize in developing modern, attractive, and scalable interfaces using JavaScript and React as my primary stack. I have experience building dynamic applications with a strong focus on performance, user experience, and efficient REST API consumption. Additionally, I apply development best practices to create reusable, maintainable, and responsive interfaces, always prioritizing optimization and application fluidity.",
     formationInformation:
       "I am currently in the final semester of my Software Development Technology degree and continue strengthening my skills through self-directed learning and constant practice.",
-  };
+    language: "Languages",
+    spanish: "Spanish",
+    english: "English",
+    languageLevel: "native",
+    softSkills: "Soft Skills",
+    teamWork: "Teamwork",
+    flexibility: "adaptability",
+    toolsAndTechnologies: "Tools and Technologies",
+    };
 
   return (
     <>
@@ -82,8 +101,23 @@ function App() {
         spanishText={spanishText}
         englishText={englishText}
       />
+      {/*  Skills Section  */}
+      <SkillsSection
+        inSpanish={inSpanish}
+        inLightTheme={inLightTheme}
+        spanishText={spanishText}
+        englishText={englishText}
+        links={links}
+      />
+
       {/*  Projects Section  */}
-      
+      {/* <ProjectsSection
+        inSpanish={inSpanish}
+        inLightTheme={inLightTheme}
+        spanishText={spanishText}
+        englishText={englishText}
+        links={links}
+      /> */}
 
       {/*  Contact Section  */}
     </>

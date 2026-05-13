@@ -8,7 +8,7 @@ export default function AboutMeSection({
 }) {
   return (
     <section className="aboutMeSection">
-      <h2 className="aboutMeTittle">
+      <h2 className="aboutMeTitle">
         {inSpanish ? spanishText.aboutMe : englishText.aboutMe}{" "}
       </h2>
       <p className="profileText">

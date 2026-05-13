@@ -1,0 +1,74 @@
+.skillsSection {
+  width: 100%;
+  height: 100vh;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.404);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.skillsTitle {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 8vh;
+}
+
+.skillsFrame {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+  padding: 20px;
+}
+
+.backendSkills,
+.frontendSkillsFrame,
+.languagesFrame,
+.softSkillsFrame,
+.toolsAndTechnologiesFrame {
+  background-color: rgba(0, 0, 0, 0.849);
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.backendSkills{
+    grid-column: span 2;
+}
+
+.backendTitle,
+.frontendTitle,
+.languageTitle,
+.softSkillsTitle,
+.toolsAndTechnologiesTitle{
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+}
+
+.backendItems,
+.frontendItems,
+.languagesItems,
+.softSkillsItems,
+.toolsAndTechnologiesItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+#imgIconInglés,
+#imgIconEnglish{
+    width: 30px;
+    height: 30px;
+}

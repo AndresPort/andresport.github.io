@@ -2,14 +2,13 @@
 
 .header {
   position: sticky;
-  display: flex;
   width: 95%;
+  display: flex;
+  top: 3%;
   justify-content: space-between;
-  color: rgb(0, 0, 0);
   justify-self: center;
-  top: 5%;
+  color: rgb(0, 0, 0);
   background-color: none;
-
 }
 
 .logoContainer {
@@ -30,9 +29,9 @@
   gap: 4vw;
   padding: 5px 30px;
   border-radius: 50px;
-  margin-left: -6vw;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
-  margin-left: 1vw;
+ margin-left: -5vw;
 }
 
 .tittlesContainer span {
